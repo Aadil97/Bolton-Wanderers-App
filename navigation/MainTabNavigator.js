@@ -106,7 +106,11 @@ const tabNavigator = createBottomTabNavigator({
 },
 {
   initialRouteName: "FixturesStack",
-  headerMode: 'float'
+  backBehavior: "history",
+  tabBarOptions: {
+    activeBackgroundColor: '#273C80',
+    activeTintColor: '#fff'
+  }
 });
 
 tabNavigator.path = '';
