@@ -1,5 +1,12 @@
 import React from 'react';
-import {Text, View, Button, StyleSheet, Image, ScrollView} from 'react-native';
+import {
+    Text,
+    View,
+    StyleSheet,
+    Image,
+    ScrollView,
+    Animated,
+} from 'react-native';
 
 import MK_Dons from '../assets/images/MK_DONS_LOGO.png';
 import Stanley from '../assets/images/STANLEY_LOGO.png';
