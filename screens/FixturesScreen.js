@@ -13,8 +13,26 @@ import Stanley from '../assets/images/STANLEY_LOGO.png';
 import AFC from '../assets/images/AFC_WIMBLEDON_LOGO.png';
 
 class Match extends React.Component {
+    state = {
+        fadeAnim: new Animated.Value(0),
+    };
+    componentDidMount(){
+        Animated.timing(
+            this.state.fadeAnim,
+            {
+                toValue: 1,
+                duration: 2000,
+            }
+        ).start();
+    }
     render(){
+        let { fadeAnim } = this.state;
         return (
+            <Animated.View // Special animatable View
+        style={{
+          ...this.props.style,
+          opacity: fadeAnim, // Bind opacity to animated value
+        }}>
             <View style={styles.outerContainer}>
                 <Text style={styles.league}>{this.props.date} | {this.props.league}</Text>
                 <View style={styles.innerContainer}>
@@ -27,6 +45,7 @@ class Match extends React.Component {
                     <Text>{this.props.opponent}</Text>
                 </View>
             </View>
+        </Animated.View>
         )
     }
 }

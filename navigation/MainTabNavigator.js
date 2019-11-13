@@ -122,7 +122,7 @@ const tabNavigator = createBottomTabNavigator({
   SettingsStack,
 },
 {
-  initialRouteName: "VideoStack",
+  initialRouteName: "FixturesStack",
   backBehavior: "history",
   tabBarOptions: {
     activeBackgroundColor: '#273C80',
