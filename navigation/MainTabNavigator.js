@@ -8,7 +8,6 @@ import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import FixturesScreen from '../screens/FixturesScreen';
 import NewsScreen from '../screens/NewsScreen';
-import VideoScreen from '../screens/VideoScreen';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -98,28 +97,12 @@ NewsStack.navigationOptions = {
 
 NewsStack.path='';
 
-const VideoStack = createStackNavigator(
-  {
-    Videos: VideoScreen,
-  },
-  config
-);
-
-VideoStack.navigationOptions = {
-  tabBarLabel: 'Videos',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={'play-circle'} />
-  ),
-};
-
-VideoStack.path='';
-
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
+  LinksStack,
+  SettingsStack,
   FixturesStack,
   NewsStack,
-  VideoStack,
-  SettingsStack,
 },
 {
   initialRouteName: "VideoStack",
