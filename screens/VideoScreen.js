@@ -1,22 +1,15 @@
 import React from 'react';
 import {View, Text, Button, StyleSheet, ScrollView, Dimensions} from 'react-native';
-import { Video } from 'expo-av';
 
 export default function VideoScreen() {
     return (
         <ScrollView>
             <View style={styles.container}>
-            <Video
-                source={require('../assets/video/HIGHLIGHTS.mp4')}
-                rate={1.0}
-                volume={1.0}
-                isMuted={false}
-                resizeMode="cover"
-                shouldPlay
-                isLooping
-                useNativeControls
-                style={styles.video}
-            />
+                <WebView
+                style={{flex:1}}
+                javaScriptEnabled={true}
+                source={{uri: 'https://www.youtube.com/embed/ZZ5LpwO-An4?rel=0&autoplay=0&showinfo=0&controls=0'}}
+                />
             </View>
             <Text style={styles.videoTitle}>HIGHLIGHTS | Bolton Wanderers 2-1 Fleetwood Town</Text>
         </ScrollView>
