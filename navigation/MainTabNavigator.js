@@ -119,10 +119,9 @@ const tabNavigator = createBottomTabNavigator({
   NewsStack,
   FixturesStack,
   VideoStack,
-  SettingsStack,
 },
 {
-  initialRouteName: "FixturesStack",
+  initialRouteName: "NewsStack",
   backBehavior: "history",
   tabBarOptions: {
     activeBackgroundColor: '#273C80',
