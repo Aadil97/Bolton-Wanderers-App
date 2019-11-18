@@ -11,5 +11,8 @@ export default function FixturesScreen(){
 
 FixturesScreen.navigationOptions = {
     title: 'Fixtures',
-    headerTintColor: "blue",
+    headerTintColor: '#fff',
+    headerStyle: {
+        backgroundColor: '#273C80'
+    }
 }

@@ -3,6 +3,13 @@ import {View, Text, Button, StyleSheet, ScrollView, Dimensions} from 'react-nati
 import { WebView } from 'react-native-webview';
 
 export default class VideoScreen extends Component {
+    static navigationOptions = {
+        title: 'Videos',
+        headerTintColor: '#fff',
+        headerStyle: {
+        backgroundColor: '#273C80',
+        }
+    };
     render(){
         return (
             <WebView 
@@ -11,8 +18,3 @@ export default class VideoScreen extends Component {
     );
     }
 }
-
-VideoScreen.navigationOptions = {
-    title: 'Videos',
-    headerTintColor: "blue",
-};
