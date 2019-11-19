@@ -1,13 +1,14 @@
 import React from 'react';
 import { Platform } from 'react-native';
-import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
+import { createStackNavigator, createBottomTabNavigator, createMaterialTopTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
 import FixturesScreen from '../screens/FixturesScreen';
 import NewsScreen from '../screens/NewsScreen';
+import FacebookScreen from '../screens/FacebookScreen';
+import TwitterScreen from '../screens/TwitterScreen';
+import InstagramScreen from '../screens/InstagramScreen';
 import VideoScreen from '../screens/VideoScreen';
 
 const config = Platform.select({
@@ -34,38 +35,6 @@ HomeStack.navigationOptions = {
 
 HomeStack.path = '';
 
-const LinksStack = createStackNavigator(
-  {
-    Links: LinksScreen,
-  },
-  config
-);
-
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={'external-link'} />
-  )
-};
-
-LinksStack.path = '';
-
-const SettingsStack = createStackNavigator(
-  {
-    Settings: SettingsScreen,
-  },
-  config
-);
-
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={'cog'} />
-  ),
-};
-
-SettingsStack.path = '';
-
 const FixturesStack = createStackNavigator(
   {
     Fixtures: FixturesScreen,
@@ -85,6 +54,9 @@ FixturesStack.path = '';
 const NewsStack = createStackNavigator(
   {
     News: NewsScreen,
+    Facebook: FacebookScreen,
+    Twitter: TwitterScreen,
+    Instagram: InstagramScreen,
   },
   config
 );
@@ -126,7 +98,7 @@ const tabNavigator = createBottomTabNavigator({
   tabBarOptions: {
     activeBackgroundColor: '#273C80',
     activeTintColor: '#fff'
-  }
+  },
 });
 
 tabNavigator.path = '';

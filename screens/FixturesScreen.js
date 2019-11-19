@@ -5,6 +5,8 @@ export default function FixturesScreen(){
     return(
        <WebView
             source={{uri: "https://www.skysports.com/bolton-wanderers-fixtures"}}
+            renderLoading={this.renderLoading}
+            startInLoadingState
        />
     );
 }

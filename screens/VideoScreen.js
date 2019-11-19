@@ -14,6 +14,8 @@ export default class VideoScreen extends Component {
         return (
             <WebView 
                 source = {{ uri: "https://www.youtube.com/user/OfficialBWFC/videos"}}
+                renderLoading={this.renderLoading}
+                startInLoadingState
             />
     );
     }

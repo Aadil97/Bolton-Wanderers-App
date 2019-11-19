@@ -3,45 +3,49 @@ import { WebView } from 'react-native-webview';
 import { Button, View, StyleSheet } from 'react-native';
 
 export default class NewsScreen extends React.Component {
-    static navigationOptions ={
-        headerTitle:() => (
-            <View style={styles.headerButtons}>
+    render(){
+        return (
+          <View style={{flex: 1}}>
+            <View style={styles.buttonContainer}>
             <Button
-              onPress={() => alert('This is a button!')}
+              onPress={() => {this.props.navigation.navigate('Twitter')}}
               title="Twitter"
               color="#273C80"
             />
             <Button
-              onPress={() => alert('This is a button!')}
+              onPress={() => {this.props.navigation.navigate('Facebook')}}
               title="Facebook"
               color="#273C80"
             />
             <Button
-              onPress={() => alert('This is a button!')}
+              onPress={() => {this.props.navigation.navigate('Instagram')}}
               title="Instagram"
               color="#273C80"
             />
             </View>
-          ),
-        headerTintColor: '#fff',
-        headerStyle: {
-        backgroundColor: '#273C80',
-        }
-    };
-    render(){
-        return (
-            <WebView
-                source={{uri:"https://twitter.com/OfficialBWFC"}}
-            />
+            </View>
         )
     }
 }
 
 const styles = StyleSheet.create({
-    headerButtons: {
+    buttonContainer: {
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: 'column',
         width: '100%',
+        height: '80%',
         justifyContent: 'space-evenly',
+        backgroundColor: '#273C80',
+    },
+    button: {
+      color: '#273C80',
     }
 })
+
+NewsScreen.navigationOptions = {
+  title: 'News',
+  headerTintColor: '#fff',
+  headerStyle: {
+    backgroundColor: '#273C80',
+  }
+}
