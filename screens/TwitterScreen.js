@@ -13,9 +13,10 @@ export default class TwitterScreen extends React.Component {
     render(){
         return (
             <WebView
-                source={{uri:"https://twitter.com/OfficialBWFC"}}
+                source={{html:'<a class="twitter-timeline" href="https://twitter.com/OfficialBWFC?ref_src=twsrc%5Etfw">Tweets by OfficialBWFC</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'}}
                 renderLoading={this.renderLoading}
                 startInLoadingState
+                javaScriptEnabled={true}
             />
         )
     }

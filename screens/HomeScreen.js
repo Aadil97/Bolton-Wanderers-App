@@ -9,12 +9,10 @@ import {
   View,
 } from 'react-native';
 
-import { MonoText } from '../components/StyledText';
-
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <Text>Some text</Text>
+      <Image style={styles.image} source={require('../assets/images/BWFC_LOGO.png')} />
     </View>
   );
 }
@@ -27,5 +25,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+  },
+  image: {
+    width: '40%', 
+    height: '40%',
   },
 });

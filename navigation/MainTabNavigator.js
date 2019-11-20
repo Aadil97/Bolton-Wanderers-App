@@ -1,8 +1,10 @@
 import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator, createMaterialTopTabNavigator } from 'react-navigation';
+import { TapGestureHandler, RotationGestureHandler } from 'react-native-gesture-handler';
 
 import TabBarIcon from '../components/TabBarIcon';
+
 import HomeScreen from '../screens/HomeScreen';
 import FixturesScreen from '../screens/FixturesScreen';
 import NewsScreen from '../screens/NewsScreen';
@@ -95,9 +97,10 @@ const tabNavigator = createBottomTabNavigator({
 {
   initialRouteName: "NewsStack",
   backBehavior: "history",
+  resetOnBlur: 'true',
   tabBarOptions: {
     activeBackgroundColor: '#273C80',
-    activeTintColor: '#fff'
+    activeTintColor: '#fff',
   },
 });
 
