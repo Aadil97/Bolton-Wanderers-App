@@ -95,7 +95,7 @@ const tabNavigator = createBottomTabNavigator({
   VideoStack,
 },
 {
-  initialRouteName: "HomeStack",
+  initialRouteName: "NewsStack",
   backBehavior: "history",
   resetOnBlur: 'true',
   tabBarOptions: {
